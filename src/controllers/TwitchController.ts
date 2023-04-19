@@ -2,18 +2,17 @@ import { db } from "../utils/firebase.config";
 import express from "express";
 import axios from "axios";
 
-
 export class TwitchController {
-	
+	constructor() {}
 
-	constructor() {
-		
+	async getBroadCasterId(req: express.Request, res: express.Response) {
+		const { twitchAccessToken } = req.body;
+		let config = {
+			method: "GET",
+			headers: {},
+			url: "https://api.twitch.tv/helix/users",
+		};
 	}
-
-    async getBroadCasterId(req: express.Request, res: express.Response) {
-        const { twitchAccessToken } = req.body;
-        let config = {}
-
 
 	// async createUser(user: User): Promise<createUser> {
 	// 	try {
@@ -32,6 +31,4 @@ export class TwitchController {
 	// 		return { status: 500, message: "Error Creating User" };
 	// 	}
 	// }
-
-
 }
