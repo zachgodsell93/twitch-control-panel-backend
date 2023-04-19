@@ -28,7 +28,8 @@ userRouter.post(
 	"/update_user/:uid",
 	async (req: express.Request, res: express.Response) => {
 		console.log(req.body);
-		const user = await userController.createUser(req.body);
+		const uid = req.params.uid;
+		const user = await userController.updateUser(uid, req.body);
 		res.json({ status: 201, message: "User Created" });
 	}
 );
