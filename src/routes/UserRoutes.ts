@@ -16,22 +16,22 @@ const userController = new UserController();
 // });
 
 userRouter.post(
-	"/create_user",
-	async (req: express.Request, res: express.Response) => {
-		const user = await userController.createUser(req.body);
-		console.log(user);
-		res.json({ status: 201, message: "User Created" });
-	}
+  "/create_user",
+  async (req: express.Request, res: express.Response) => {
+    const user = await userController.createUser(req.body);
+    console.log(user);
+    res.json({ status: 201, message: "User Created" });
+  }
 );
 
 userRouter.post(
-	"/update_user/:uid",
-	async (req: express.Request, res: express.Response) => {
-		console.log(req.body);
-		const uid = req.params.uid;
-		const user = await userController.updateUser(uid, req.body);
-		res.json({ status: 201, message: "User Created" });
-	}
+  "/update_user/:uid",
+  async (req: express.Request, res: express.Response) => {
+    console.log(req.body);
+    const uid = req.params.uid;
+    const user = await userController.updateUser(uid, req.body);
+    res.json({ status: 201, message: "User Created" });
+  }
 );
 
 export { userRouter };

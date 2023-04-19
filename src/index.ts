@@ -13,12 +13,12 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/health", (req: express.Request, res: express.Response) => {
-	res.json({ status: "Healthy :)" });
+  res.json({ status: "Healthy :)" });
 });
 
 //Routes
 app.use("/users", userRouter);
 
 app.listen(port, () => {
-	console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
