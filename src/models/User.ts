@@ -1,7 +1,7 @@
 interface User {
-	uid: number;
+	uid: string;
 	email: string;
-	twitchBroadCasterId: number;
+	twitchBroadcasterId: string;
 }
 
 export { User };

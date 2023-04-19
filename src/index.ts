@@ -2,15 +2,18 @@ import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import { userRouter } from "./routes/UserRoutes";
+const cors = require("cors");
 dotenv.config();
 
 const app: express.Express = express();
-const port: number = Number(process.env.PORT) || 3100;
+const port: number = Number(process.env.PORT) || 3333;
 app.use(helmet());
 app.disable("x-powered-by");
+app.use(express.json());
+app.use(cors());
 
 app.get("/health", (req: express.Request, res: express.Response) => {
-	res.json({ status: "ok" });
+	res.json({ status: "Healthy :)" });
 });
 
 //Routes
